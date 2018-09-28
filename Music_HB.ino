@@ -1,16 +1,9 @@
 
-// setup hw
 int SPEAKER_PIN = 9;
 int SPEAKER = SPEAKER_PIN;
-// end of setuphw
 
-// TONES  ==========================================
-// Start by defining the relationship between
-//       note, period, &  frequency.
-
-// custom
+//Customized tone
 #define PAUSE 0
-// end of custom
 
 #define NOTE_B0  31
 #define NOTE_C1  33
@@ -100,7 +93,7 @@ int SPEAKER = SPEAKER_PIN;
 #define NOTE_C8  4186
 #define NOTE_CS8 4435
 #define NOTE_D8  4699
-#define NOTE_DS8 4978// setup hw
+#define NOTE_DS8 4978
 
 // code related to the melody itself
 #define NUM_OF_NOTES 28
@@ -118,11 +111,6 @@ int   NOTE_LEN[NUM_OF_NOTES]   = {
       4,2,8,8,8,8,16, 150,    //150 millis for the third pause
       4,2,8,8,8,20 };
 
-/*
- * increase or reduce this value if you want to speed up or slow down the song.
- * This won't affect pause duration, which is defined in the array right above 
- * and expressed in milliseconds
- */
 int   TEMPO = 65;
 
 void playNote(int pitch,int duration) {
@@ -130,12 +118,6 @@ void playNote(int pitch,int duration) {
     delay( duration);
     noTone( SPEAKER);
 }
-// end of the code related to the melody itself
-
-/*
- * arduino's standard setup() and loop() methods section. I had no need to repe
- * at so I put it in setup()
- */
 
 void setup() {
     for (int i = 0; i < NUM_OF_NOTES; i++) {
